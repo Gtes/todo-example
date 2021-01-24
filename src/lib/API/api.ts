@@ -8,13 +8,9 @@ export const getTodos = async (url = `${BASE_URL}/todos`): Promise<ITodo[]> => {
 };
 
 export const postTodo = async (url = `${BASE_URL}/todos`) => {
-    try {
-        const todo: ITodo = await fetch(url, { method: "POST" }).then((resp) =>
-            resp.json()
-        );
-        console.log(todo);
-        return todo;
-    } catch (e) {
-        console.log(e);
-    }
+    const todo: ITodo = await fetch(url, { method: "POST" }).then((resp) =>
+        resp.json()
+    );
+    console.log(todo);
+    return todo;
 };
